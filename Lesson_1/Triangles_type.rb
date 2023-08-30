@@ -12,7 +12,7 @@ if first_s==second_s && second_s==third_s
   elsif first_s == second_s || second_s == third_s || first_s == third_s
     puts "Isosceles triangle"
   elsif first_s**2==second_s**2+third_s**2 || second_s**2==first_s**2+third_s**2 || third_s**2 == first_s**2+second_s**2
-    puts "Right triangle"
+    puts "Right triangle "
   else
     puts "Triangle"
 end
