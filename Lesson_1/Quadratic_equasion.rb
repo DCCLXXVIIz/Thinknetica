@@ -7,10 +7,6 @@ b = gets.to_f
 puts "Enter the coefficient c"
 c = gets.to_f
 d = b**2-4*a*c
-if c==0
-
-
-end
 
 if d < 0
   puts "Действительных корней нет"
@@ -21,4 +17,5 @@ else
     else
       x2 = (b*(-1) - Math.sqrt(d))/(2*a)
       puts "Дискриминант равен #{d}, первый корень#{x1}, второй корень #{x2}"
+    end
     end
