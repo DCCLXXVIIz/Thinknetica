@@ -1,3 +1,5 @@
+require_relative 'train'
+
 class Station
   attr_reader :station_trains, :station_name
   def initialize(name)
@@ -13,9 +15,14 @@ class Station
     else
       puts "It's not a train"
     end
+  end
 
   def send_train (train)
     if @station_trains.include?(train)
       @station_trains.delete(train)
       @station_trains_type[train.train_type].delete(train.train_id)
+    else
+      puts "Invalid input"
+    end
   end
+end
