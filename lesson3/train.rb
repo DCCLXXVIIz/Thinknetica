@@ -10,6 +10,7 @@ class Train
     @train_lenght = number
     @train_speed = 0
     @train_route = []
+    @train_route1 = 0
     @train_location = 0
   end
 
@@ -21,20 +22,23 @@ class Train
     if @train_speed == 0
       if change == "add"
         @train_lenght += 1
+        puts "A wagon has been added to the train. The number of wagon is now #{@train_lenght}"
       elsif change == "remove" && @train_lenght > 0
         @train_lenght -= 1
+        puts "A wagon has been removed to the train. The number of wagon is now #{@train_lenght}"
       else
         puts "the train has no wagon to remove or an invalid command has been entered. Enter add or remove to method"
       end
     else
-      puts "the train is moving. To change the number of cars, stop the train"
+      puts "the train is moving at speed #{@train_speed}. To change the number of wagon, stop the train"
     end
   end
 
-  def train_route(route)
-    if route.class == Route
-      @train_route = route.route_stations
-
+  def train_route(route, train)
+    if route.class == Route && train.class == Train
+      #@train_route = route.route_stations
+      @train_route1 = route
+      @train_route1.route_stations[0].station_bring_train(train)
     else
       puts "Invalid input"
     end
@@ -42,7 +46,7 @@ class Train
 
   def train_move (direction)
     if direction == "forward"
-      @train_location += 1 if @train_location < @train_route.size
+      @train_location += 1 if @train_location < @train_route1.route_stations.size
     elsif direction == "back"
       @train_location -= 1 if @train_location > 0
     else
