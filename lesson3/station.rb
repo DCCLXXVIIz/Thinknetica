@@ -11,7 +11,7 @@ class Station
   def station_bring_train (train)
     if train.class == Train
       @station_trains << train
-      @station_trains_type[train.train_type] << train.train_id
+      @station_trains_type[train.train_type] = train.train_id
     else
       puts "It's not a train"
     end
@@ -20,7 +20,8 @@ class Station
   def station_send_train (train)
     if @station_trains.include?(train)
       @station_trains.delete(train)
-      @station_trains_type[train.train_type].delete(train.train_id)
+      #@station_trains_type[train.train_type].delete(train.train_id)
+      print @station_trains_type[train.train_type].class
     else
       puts "Invalid input"
     end

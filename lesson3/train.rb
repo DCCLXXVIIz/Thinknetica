@@ -34,7 +34,7 @@ class Train
     end
   end
 
-  def train_route(route, train)
+  def train_route(route,train)
     if route.class == Route && train.class == Train
       #@train_route = route.route_stations
       @train_route1 = route
@@ -44,13 +44,21 @@ class Train
     end
   end
 
-  def train_move (direction)
-    if direction == "forward"
-      @train_location += 1 if @train_location < @train_route1.route_stations.size
-    elsif direction == "back"
-      @train_location -= 1 if @train_location > 0
+  def train_move (direction, train)
+    if @train_route1 != 0 && train.class == Train
+      if direction == "forward"
+        @train_location += 1 if @train_location < @train_route1.route_stations.size
+        @train_route1.route_stations[@train_location-1].station_send_train(train)
+        @train_route1.route_stations[@train_location].station_bring_train(train)
+      elsif direction == "back"
+        @train_location -= 1 if @train_location > 0
+        @train_route1.route_stations[@train_location+1].station_send_train(train)
+        @train_route1.route_stations[@train_location].station_bring_train(train)
+      else
+        puts "invalid input. only forward and back are accepted"
+      end
     else
-      puts "invalid input. only forward and back are accepted"
+      puts "there is no route assigned to the train"
     end
   end
 

@@ -47,3 +47,11 @@ train1.train_change_lenght("remove")
 train1.train_change_lenght("remove")
 train1.train_change_lenght("remove")
 train1.train_change_lenght("remove")
+
+station1.station_train_list
+train1.train_move("forward", train1)
+train1.train_route(route1,train1)
+train2.train_route(route1, train2)
+#station1.station_train_list
+train1.train_move("forward",train1)
+#station1.station_train_list
