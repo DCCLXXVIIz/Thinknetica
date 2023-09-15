@@ -52,6 +52,10 @@ station1.station_train_list
 train1.train_move("forward", train1)
 train1.train_route(route1,train1)
 train2.train_route(route1, train2)
-#station1.station_train_list
+train3.train_route(route1,train3)
+station1.station_train_list
 train1.train_move("forward",train1)
-#station1.station_train_list
+station1.station_train_list
+station2.station_train_list
+train2.train_move("back",train1)
+station1.station_trains_type_list
