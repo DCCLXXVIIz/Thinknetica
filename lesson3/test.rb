@@ -22,40 +22,40 @@ route1 = Route.new(station1, station9)
 route2 = Route.new(station6, station9)
 route3 = Route.new(station9, station1)
 route4 = Route.new(station9, station6)
-route1.route_add_station(station2)
-route1.route_add_station(station3)
-route1.route_add_station(station4)
-route1.route_add_station(station5)
-route1.route_add_station(station6)
-route1.route_add_station(station7)
-route1.route_add_station(station8)
-route1.route_add_station(station6)
-route1.route_delete_station(station4)
+route1.r_add_station(station2)
+route1.r_add_station(station3)
+route1.r_add_station(station4)
+route1.r_add_station(station5)
+route1.r_add_station(station6)
+route1.r_add_station(station7)
+route1.r_add_station(station8)
+route1.r_add_station(station6)
+route1.r_delete_station(station4)
 
-route2.route_add_station(station7)
-route2.route_add_station(station8)
+route2.r_add_station(station7)
+route2.r_add_station(station8)
 
-route1.route_stations_name
+route1.r_stations_name
 
-train1.train_speed = 40
-train1.train_change_lenght("add")
-train1.train_change_lenght("remove")
-train1.train_stop
-train1.train_change_lenght("add")
-train1.train_change_lenght("remove")
-train1.train_change_lenght("remove")
-train1.train_change_lenght("remove")
-train1.train_change_lenght("remove")
-train1.train_change_lenght("remove")
+train1.t_speed = 40
+train1.t_change("add")
+train1.t_change("remove")
+train1.t_stop
+train1.t_change("add")
+train1.t_change("remove")
+train1.t_change("remove")
+train1.t_change("remove")
+train1.t_change("remove")
+train1.t_change("remove")
 
-station1.station_train_list
-train1.train_move("forward", train1)
-train1.train_route(route1,train1)
-train2.train_route(route1, train2)
-train3.train_route(route1,train3)
-station1.station_train_list
-train1.train_move("forward",train1)
-station1.station_train_list
-station2.station_train_list
-train2.train_move("back",train1)
-station1.station_trains_type_list
+station1.s_train_list
+train1.t_move("forward")
+train1.t_route(route1)
+train2.t_route(route1)
+train3.t_route(route1)
+station1.s_train_list
+train1.t_move("forward")
+station1.s_train_list
+station2.s_train_list
+train2.t_move("back")
+station1.s_trains_type_list

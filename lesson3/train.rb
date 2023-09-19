@@ -1,41 +1,50 @@
 require_relative 'route'
 
 class Train
-  attr_accessor :train_speed
-  attr_reader :train_lenght, :train_type, :train_id
+  attr_accessor :t_speed
+  attr_reader :t_lenght, :t_type, :t_id
   def initialize (id, type, number)
-    @train_id = id
-    @train_type = type
-    @train_lenght = number
-    @train_speed = 0
-    @train_route1 = 0
-    @train_location = 0
+    @t_id = id
+    @t_type = type
+    @t_lenght = number
+    @t_speed = 0
+    @t_route = 0
   end
-  def train_stop
-    @train_speed = 0
+
+  def t_stop
+    @t_speed = 0
   end
-  def train_change_lenght (change)
-    @train_lenght += 1 if @train_speed == 0 && change == "add"
-    @train_lenght -= 1 if @train_speed == 0 && change == "remove" && @train_lenght > 0
+
+  def t_change (change)
+    @t_lenght += 1 if @t_speed == 0 && change == "add"
+    @t_lenght -= 1 if @t_speed == 0 && change == "remove" && @t_lenght > 0
   end
-  def train_route(route, self)
+
+  def t_route(route)
     if route.class == Route
-      @train_route1 = route
-      @train_route1.route_stations[0].station_bring_train(self)
+      @t_location = 0
+      @t_route = route
+      @t_route.r_stations[@t_location].s_bring_train(self)
+    end
   end
-  def train_move (direction, self)
-    if @train_route1 != 0 && direction == "forward"
-        @train_location += 1 if @train_location < @train_route1.route_stations.size
-        @train_route1.route_stations[@train_location-1].station_send_train(train)
-        @train_route1.route_stations[@train_location].station_bring_train(train)
-    elsif @train_route1 != 0 && direction == "back"
-        @train_location -= 1 if @train_location > 0
-        @train_route1.route_stations[@train_location+1].station_send_train(train)
-        @train_route1.route_stations[@train_location].station_bring_train(train)
+
+  def t_move (direction)
+    if @t_route != 0 && direction == "forward" && @t_location < @t_route.r_stations.size
+      @t_route.r_stations[@t_location].s_send_train(self)
+      @t_location += 1
+      @t_route.r_stations[@t_location].s_bring_train(self)
+    elsif @t_route != 0 && direction == "back" && @t_location > 0
+      @t_route.r_stations[@t_location].s_send_train(self)
+      @t_location -= 1
+      @t_route.r_stations[@t_location].s_bring_train(self)
+    else
+      puts "there is no route assigned to the train or there are no more station"
+    end
   end
-  def train_where (locate)
-    puts "previous station is #{@train_route[@train_location - 1]}" if @train_route.size != 0 && locate == "previous"
-    puts "current station is #{@train_route[@train_location]}" if @train_route.size != 0 && locate == "current"
-    puts "next station is #{@train_route[@train_location + 1]}" if @train_route.size != 0 && locate == "next" && @train_location < @train_route1.route_stations.size
+
+  def t_where (locate)
+    puts "previous station is #{@t_route[@t_location - 1]}" if locate == "previous" && @t_route > 0
+    puts "current station is #{@t_route[@t_location]}" if locate == "current"
+    puts "next station is #{@t_route[@t_location + 1]}" if locate == "next" && @t_location < @t_route.size
   end
 end

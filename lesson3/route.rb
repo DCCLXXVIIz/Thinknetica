@@ -9,14 +9,14 @@ class Route
     if station.class != Station || @r_stations.include?(station)
       puts "The object #{station} is not a station class or alredy exist in route"
     else
-      @r_stations.include(-2, station)
-      puts "#{station.station_name} station has been added to the route (#{@r_stations[0].station_name} --- #{@r_stations[-1].station_name})"
+      @r_stations.insert(-2, station)
+      puts "#{station.s_name} station has been added to the route (#{@r_stations[0].s_name} --- #{@r_stations[-1].s_name})"
     end
   end
-  def route_delete_station (station)
+  def r_delete_station (station)
     @r_stations.delete(station) if @r_stations.include?(station)
   end
-  def route_stations_name
-    @r_stations.each {|index| puts index.station_name}
+  def r_stations_name
+    @r_stations.each {|index| puts index.s_name}
   end
 end
