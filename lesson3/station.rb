@@ -1,25 +1,25 @@
 require_relative 'train'
 
 class Station
-  attr_reader :s_trains, :s_name
+  attr_reader :trains, :station_name
   def initialize(name)
-    @s_name = name
-    @s_trains = []
+    @station_name = name
+    @trains = []
   end
 
-  def s_bring_train (train)
-    @s_trains << train if train.class == Train
+  def bring_train (train)
+    @trains << train if train.class == Train
   end
 
-  def s_send_train (train)
-    @s_trains.delete(train) if @s_trains.include?(train)
+  def send_train (train)
+    @trains.delete(train) if @trains.include?(train)
   end
 
-  def s_train_list
-    @s_trains.each {|index| puts index.t_id}
+  def train_list
+    @trains.each {|index| puts index.id}
   end
 
-  def s_trains_type_list
-    @s_trains.each {|index| puts index.t_type}
+  def trains_type_list
+    @trains.each {|index| puts index.type}
   end
 end

@@ -22,40 +22,40 @@ route1 = Route.new(station1, station9)
 route2 = Route.new(station6, station9)
 route3 = Route.new(station9, station1)
 route4 = Route.new(station9, station6)
-route1.r_add_station(station2)
-route1.r_add_station(station3)
-route1.r_add_station(station4)
-route1.r_add_station(station5)
-route1.r_add_station(station6)
-route1.r_add_station(station7)
-route1.r_add_station(station8)
-route1.r_add_station(station6)
-route1.r_delete_station(station4)
+route1.add_station(station2)
+route1.add_station(station3)
+route1.add_station(station4)
+route1.add_station(station5)
+route1.add_station(station6)
+route1.add_station(station7)
+route1.add_station(station8)
+route1.add_station(station6)
+route1.delete_station(station4)
 
-route2.r_add_station(station7)
-route2.r_add_station(station8)
+route2.add_station(station7)
+route2.add_station(station8)
 
-route1.r_stations_name
+route1.stations_name
 
-train1.t_speed = 40
-train1.t_change("add")
-train1.t_change("remove")
-train1.t_stop
-train1.t_change("add")
-train1.t_change("remove")
-train1.t_change("remove")
-train1.t_change("remove")
-train1.t_change("remove")
-train1.t_change("remove")
+train1.speed = 40
+train1.change("add")
+train1.change("remove")
+train1.stop
+train1.change("add")
+train1.change("remove")
+train1.change("remove")
+train1.change("remove")
+train1.change("remove")
+train1.change("remove")
 
-station1.s_train_list
-train1.t_move("forward")
-train1.t_route(route1)
-train2.t_route(route1)
-train3.t_route(route1)
-station1.s_train_list
-train1.t_move("forward")
-station1.s_train_list
-station2.s_train_list
-train2.t_move("back")
-station1.s_trains_type_list
+station1.train_list
+train1.move("forward")
+train1.route(route1)
+train2.route(route1)
+train3.route(route1)
+station1.train_list
+train1.move("forward")
+station1.train_list
+station2.train_list
+train2.move("back")
+station1.trains_type_list
