@@ -1,3 +1,0 @@
-class Passanger
-
-end

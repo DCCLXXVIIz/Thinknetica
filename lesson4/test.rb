@@ -1,12 +1,16 @@
 require_relative 'station'
 require_relative 'route'
 require_relative 'train'
+require_relative 'cargo_train'
+require_relative 'cargo_carriage'
+require_relative 'passenger_train'
+require_relative 'passenger_carriage'
 
-train1 = Train.new(1, "cargo", 2)
-train2 = Train.new(2, "passanger", 1)
-train3 = Train.new(3, "cargo", 3)
-train4 = Train.new(4, "passanger", 1)
-train5 = Train.new(5, "passanger", 2)
+train1 = CargoTrain.new(1)
+train2 = CargoTrain.new(2)
+train3 = CargoTrain.new(3)
+train4 = PassengerTrain.new(4)
+train5 = PassengerTrain.new(5)
 
 station1 = Station.new("Moscow")
 station2 = Station.new("Gagarin")
@@ -17,6 +21,15 @@ station6 = Station.new("Minsk")
 station7 = Station.new("Molodechno")
 station8 = Station.new("Smorgon")
 station9 = Station.new("Kaliningrad")
+
+cargo_carriage1 = CargoCarriage
+cargo_carriage2 = CargoCarriage
+cargo_carriage3 = CargoCarriage
+passenger_carriage1 = PassengerCarriage
+passenger_carriage2 = PassengerCarriage
+passenger_carriage3 = PassengerCarriage
+passenger_carriage4 = PassengerCarriage
+passenger_carriage5 = PassengerCarriage
 
 route1 = Route.new(station1, station9)
 route2 = Route.new(station6, station9)
@@ -38,21 +51,21 @@ route2.add_station(station8)
 route1.stations_name
 
 train1.speed = 40
-train1.change("add")
-train1.change("remove")
+train1.add_carriage(cargo_carriage1)
+train1.add_carriage(cargo_carriage2)
 train1.stop
-train1.change("add")
-train1.change("remove")
-train1.change("remove")
-train1.change("remove")
-train1.change("remove")
-train1.change("remove")
+train1.add_carriage(cargo_carriage1)
+train1.add_carriage(cargo_carriage2)
+train1.remove_carriage(cargo_carriage1)
+train1.add_carriage(cargo_carriage3)
+train4.add_carriage(passenger_carriage1)
+train4.add_carriage(passenger_carriage2)
 
 station1.train_list
 train1.move("forward")
 train1.route(route1)
 train2.route(route1)
-train3.route(route1)
+train4.route(route1)
 station1.train_list
 train1.move("forward")
 station1.train_list

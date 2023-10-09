@@ -5,15 +5,18 @@ class Train
     @id = id
     @speed = 0
     @route = 0
+    @carriages = []
   end
 
   def stop
     @speed = 0
   end
 
-  def change (change)
-    @lenght += 1 if @speed == 0 && change == "add"
-    @lenght -= 1 if @speed == 0 && change == "remove" && @lenght > 0
+  def add_carriage (carriage)
+    @carriages << carriage if @speed.zero?
+  end
+  def remove_carriage
+    @carriages.delete(carriage) if @speed.zero? && @carriages.include?(carriage)
   end
 
   def route(route)

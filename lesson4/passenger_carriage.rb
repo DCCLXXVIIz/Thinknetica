@@ -1,4 +1,4 @@
-class CargoCarriage
+class PassengerCarriage
   def initialize
   end
 end
