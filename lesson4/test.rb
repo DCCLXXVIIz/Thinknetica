@@ -56,7 +56,7 @@ train1.add_carriage(cargo_carriage2)
 train1.stop
 train1.add_carriage(cargo_carriage1)
 train1.add_carriage(cargo_carriage2)
-train1.remove_carriage(cargo_carriage1)
+#train1.remove_carriage(cargo_carriage1)
 train1.add_carriage(cargo_carriage3)
 train4.add_carriage(passenger_carriage1)
 train4.add_carriage(passenger_carriage2)
@@ -71,4 +71,5 @@ train1.move("forward")
 station1.train_list
 station2.train_list
 train2.move("back")
-station1.trains_type_list
+puts train1.carriages
+puts train4.carriages

@@ -5,7 +5,6 @@ class Station
     @trains = []
   end
 
-  protected
   def bring_train (train)
     @trains << train if train.class == Train
   end
