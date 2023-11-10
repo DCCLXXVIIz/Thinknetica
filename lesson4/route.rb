@@ -1,7 +1,6 @@
-require_relative 'station'
-
 class Route
-  attr_reader :stations
+
+  attr_accessor :stations
   def initialize(first_station, last_station)
     @stations = [first_station, last_station]
   end

@@ -1,4 +1,5 @@
 class Station
+
   attr_reader :trains, :station_name
   def initialize(name)
     @station_name = name
@@ -6,7 +7,7 @@ class Station
   end
 
   def bring_train (train)
-    @trains << train if train.class == Train
+    @trains << train
   end
 
   def send_train (train)

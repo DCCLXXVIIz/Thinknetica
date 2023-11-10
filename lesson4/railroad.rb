@@ -6,8 +6,9 @@ require_relative 'cargo_carriage'
 require_relative 'passenger_train'
 require_relative 'passenger_carriage'
 
-class Railroad
 
+
+class Railroad
   def initialize
     @stations = {}
     @trains = {}
@@ -119,19 +120,21 @@ class Railroad
     puts "Select the route from"
     self.route_list
     route = gets.to_i
+    return route
   end
 
   def select_station
     puts "Select station from"
     self.station_list
     station = gets.chomp
+    return station
   end
 
   def select_train
     puts "Select the train from"
     self.train_list
     train = gets.to_i
-    @trains[train].where("current")
+    return train
   end
 
   def route_list

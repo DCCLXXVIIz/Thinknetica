@@ -1,4 +1,5 @@
 class Train
+
   attr_accessor :speed
   attr_reader :id, :carriages, :route
   def initialize (id)
@@ -16,12 +17,10 @@ class Train
     @carriages.delete_at(-1) if @speed.zero? && @carriages.length > 0
   end
 
-  def route(route)
-    if route.class == Route
-      @location = 0
-      @route = route
-      @route.stations[@location].bring_train(self)
-    end
+  def route(rout)
+    @location = 0
+    @route = rout
+    @route.stations[@location].bring_train(self)
   end
 
   def move (direction)
