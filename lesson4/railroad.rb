@@ -2,153 +2,188 @@ require_relative 'station'
 require_relative 'route'
 require_relative 'train'
 require_relative 'cargo_train'
-require_relative 'cargo_carriage'
+require_relative 'carriage'
 require_relative 'passenger_train'
+require_relative 'cargo_carriage'
 require_relative 'passenger_carriage'
-
 
 
 class Railroad
   def initialize
-    @stations = {}
-    @trains = {}
-    @routes = {}
-    @route = 1
+    @stations = []
+    @trains = []
+    @routes = []
+    @carriages = []
   end
 
   def menu(number)
     case number
       when 1
-        self.create_station
+        create_station
       when 2
-        self.create_train
+        create_train
       when 3
-        self.manage_route
+        manage_route
       when 4
-        self.assign_route
+        assign_route
       when 5
-        self.add_carriages
+        manage_carriage
       when 6
-        self.detach_carriages
+        #detach_carriages
+        move_train
       when 7
-        self.move_train
-      when 8
-        self.viev_list
+        viev_list
     end
   end
 
   private
   def create_station
     puts "Enter the station name"
-    name = gets.chomp
-    @stations[name] = Station.new(name)
+    @stations << Station.new(gets.chomp)
+    successfully
   end
 
   def create_train
-    puts "Enter the train id"
-    id = gets.to_i
     puts "1 - Cargo train; 2 - Passanger train"
-    choose = gets.to_i
-    case choose
+    case gets.to_i
       when 1
-        @trains[id] = CargoTrain.new(id)
+        @trains << CargoTrain.new(id)
+        successfully
       when 2
-        @trains[id] = PassengerTrain.new(id)
+        @trains << PassengerTrain.new(id)
+        successfully
       end
   end
+
+  def id
+    puts "Enter the object id"
+    gets.to_i
+  end
+
+  def successfully
+    puts "Completed successfully"
+  end
+
 
   def manage_route
     puts "Enter a value between 1 and 3 in the field: \n
     1. Create a route \n
     2. Add a station to the route \n
     3. Remove a station from the route \n"
-    number = gets.to_i
-    case number
+    case gets.to_i
       when 1
-        self.create_route
+        create_route
       when 2
-        self.add_station
+        add_station
       when 3
-        self.delete_station
+        delete_station
     end
   end
 
   def create_route
     puts "Enter the name of the first and last station of the route"
-    @routes[@route] = Route.new(@stations[select_station], @stations[select_station])
-    @route += 1
+    @routes << Route.new(selected_station, selected_station)
   end
 
   def add_station
-    @routes[select_route].add_station(@stations[select_station])
+    selected_route.add_station(selected_station)
   end
 
   def delete_station
-    @routes[select_route].delete_station(@stations[select_station])
+    route = selected_route
+    route.delete_station(selected_route_stations(route))
+  end
+
+  def selected_route_stations(route)
+    list(route.stations)
+    route.stations[gets.to_i]
   end
 
   def assign_route
-    @trains[select_train].route(@routes[select_route])
+    selected_train.route(selected_route)
+  end
+
+  def manage_carriage
+    puts "Enter a value between 1 and 2 in the field: \n
+    1. Create a carriage \n
+    2. Add a carriage to the train \n
+    3. Remove a carriage from train"
+    case gets.to_i
+      when 1
+        create_carriage
+      when 2
+        add_carriages
+      when 3
+        detach_carriages
+    end
+  end
+
+  def create_carriage
+    puts "Enter a value between 1 and 2 in the field: \n
+    1. Create a cargo carriage \n
+    2. Create a passanger carriage \n"
+    case gets.to_i
+      when 1
+        @carriages << CargoCarriage.new(id)
+        successfully
+      when 2
+        @carriages << PassengerCarriage.new(id)
+        successfully
+    end
   end
 
   def add_carriages
-    @trains[select_train].add_carriage
+    selected_train.add_carriage(selected_carriage)
   end
 
   def detach_carriages
-    @trains[select_train].remove_carriage
+    selected_train.remove_carriage
   end
 
   def move_train
     puts "1 - Forward, 2 - Back"
-    number = gets.to_i
-    case
+    case gets.to_i
       when 1
-        @trains[select_train].move("forward")
+        selected_train.move_forward
       when 2
-        @trains[select_train].move("back")
+        selected_train.move_back
     end
   end
 
   def viev_list
-    @stations[select_station].train_list
+    puts "What do you want to list? Type... \n
+      1. View a train list on station \n
+      2. View a carriage list of train"
+    case gets.to_i
+      when 1
+        selected_station.train_list
+      when 2
+        selected_train.carriages_list
+    end
   end
 
-
-
-  def select_route
-    puts "Select the route from"
-    self.route_list
-    route = gets.to_i
-    return route
+  def selected_route
+    list(@routes, "route")
+    @routes[gets.to_i]
   end
 
-  def select_station
-    puts "Select station from"
-    self.station_list
-    station = gets.chomp
-    return station
+  def selected_station
+    list(@stations, "station")
+    @stations[gets.to_i]
   end
 
-  def select_train
-    puts "Select the train from"
-    self.train_list
-    train = gets.to_i
-    return train
+  def selected_train
+    list(@trains, "train")
+    @trains[gets.to_i]
   end
 
-  def route_list
-    puts "route list"
-    @routes.keys.each {|index| puts index}
+  def selected_carriage
+    list(@carriages, "carriage")
+    @carriages[gets.to_i]
   end
 
-  def station_list
-    puts "station list"
-    @stations.keys.each {|index| puts index}
-  end
-
-  def train_list
-    puts "train list"
-    @trains.keys.each {|index| puts index}
+  def list(object, name = "object")
+    puts "Select the #{name} from objects list"
+    object.each_index {|index| puts "To select the #{name} #{object[index].name} dial at the terminal #{index}"}
   end
 end

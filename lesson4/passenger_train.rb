@@ -1,6 +1,6 @@
 class PassengerTrain < Train
-
-  def add_carriage
-    @carriages << PassengerCarriage.new if @speed.zero?
+  def initialize(number)
+    @type = :passenger
+    super
   end
 end

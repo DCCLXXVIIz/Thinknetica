@@ -1,21 +1,38 @@
 class Station
+  attr_reader :trains, :name
 
-  attr_reader :trains, :station_name
   def initialize(name)
-    @station_name = name
+    @name = name
     @trains = []
   end
 
-  def bring_train (train)
-    @trains << train
+  def bring_train(train)
+    add_train(train)
   end
 
-  def send_train (train)
-    @trains.delete(train) if @trains.include?(train)
+  def send_train(train)
+    remove_train(train) if train_at_station?(train)
   end
 
   def train_list
-    @trains.each {|index| puts index.id}
+    list_of_trains
+  end
+
+  protected
+  def add_train (train)
+    @trains << train
+  end
+
+  def remove_train (train)
+    @trains.delete(train)
+  end
+
+  def list_of_trains
+    @trains.each {|index| puts index.name}
+  end
+
+  def train_at_station?(train)
+    @trains.include?(train)
   end
 
 end
