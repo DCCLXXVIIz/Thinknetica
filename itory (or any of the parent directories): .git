@@ -1,0 +1,179 @@
+[33mcommit 557e590b265308227aad679f5d93e65ba7be90a0[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: DCCLXXVIIz <dcclxxviiz@gmail.com>
+Date:   Thu Apr 18 17:46:43 2024 +0300
+
+    1.0
+
+[33mcommit 138382dd19c905717ff1671fe54d3de7ad771390[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Oignon <dcclxxviiz@gmail.com>
+Date:   Fri Nov 10 12:37:30 2023 +0300
+
+    interface
+
+[33mcommit eef043fd1ac889bda3e05fcc6a8f3cd9eff09451[m
+Author: Oignon <dcclxxviiz@gmail.com>
+Date:   Wed Nov 1 23:11:50 2023 +0300
+
+    v08
+
+[33mcommit ef7a10087b76134aaf96029d2e2ff9b2751af240[m
+Author: ArtyomZ <dcclxxviiz@gmail.com>
+Date:   Mon Oct 9 10:58:48 2023 -0400
+
+    passenger_train
+
+[33mcommit 24de3a63c503c20b1cecc178bd9b2df8cfc638a3[m
+Author: Oignon <dcclxxviiz@gmail.com>
+Date:   Wed Oct 4 23:35:33 2023 +0300
+
+    carriage
+
+[33mcommit 1c9893b56f1a03dfee6feeca08418218cc93e58d[m
+Author: ArtyomZ <dcclxxviiz@gmail.com>
+Date:   Fri Sep 29 11:15:35 2023 -0400
+
+    lesson4_initialization
+
+[33mcommit eb06490cdefd391e82ad033d7ed3cdcb452a9d37[m
+Author: Oignon <dcclxxviiz@gmail.com>
+Date:   Fri Sep 22 07:20:41 2023 +0300
+
+    method_names_cahnge
+
+[33mcommit 67fcbcb9160d7c6c46459c29e92da843fe42d28f[m
+Author: Oignon <dcclxxviiz@gmail.com>
+Date:   Wed Sep 20 00:36:56 2023 +0300
+
+    90
+
+[33mcommit a086f201fe1e8677c0594cbaea816d773b160f41[m
+Author: ArtyomZ <dcclxxviiz@gmail.com>
+Date:   Mon Sep 18 11:24:30 2023 -0400
+
+    reduction
+
+[33mcommit ac05b6c6383d3b8c3fce794d4e6aa90009d3c406[m
+Author: ArtyomZ <dcclxxviiz@gmail.com>
+Date:   Fri Sep 15 11:16:03 2023 -0400
+
+    Type_train_station
+
+[33mcommit 3f24ece974adccec3998997abc482a597719d9de[m
+Author: ArtyomZ <dcclxxviiz@gmail.com>
+Date:   Thu Sep 14 10:42:20 2023 -0400
+
+    train_move
+
+[33mcommit c8d1a52110a381fc06e4b9470922b09ec3079f88[m
+Author: ArtyomZ <dcclxxviiz@gmail.com>
+Date:   Wed Sep 13 10:58:09 2023 -0400
+
+    train_move
+
+[33mcommit fa128b7b3e547752de70c464b0337a92f2d3d508[m
+Author: ArtyomZ <dcclxxviiz@gmail.com>
+Date:   Tue Sep 12 12:59:29 2023 -0400
+
+    Test0
+
+[33mcommit 5713b9eceed1a989e965da898e9065543b7c32ff[m
+Author: ArtyomZ <dcclxxviiz@gmail.com>
+Date:   Mon Sep 11 11:26:52 2023 -0400
+
+    route
+
+[33mcommit 50e4da50018a6ec1f7a3d2a702686ef93685b1f3[m
+Author: Oignon <dcclxxviiz@gmail.com>
+Date:   Sun Sep 10 20:01:32 2023 -0400
+
+    OOPv2
+
+[33mcommit 54fe111a277280abd4ca0d76cb50d90d828dfd2e[m
+Author: Oignon <dcclxxviiz@gmail.com>
+Date:   Sun Sep 10 21:57:37 2023 +0300
+
+    OOP
+
+[33mcommit e85cfd4975c357c891598d7500f131d0c12ee2e3[m
+Author: Oignon <dcclxxviiz@gmail.com>
+Date:   Tue Sep 5 00:41:15 2023 +0300
+
+    Lesson2_1
+
+[33mcommit 23f526cabe2d3a411efc5cd3d454d2267ea53c43[m
+Author: Oignon <dcclxxviiz@gmail.com>
+Date:   Tue Sep 5 00:38:04 2023 +0300
+
+    Lesson2
+
+[33mcommit 1f7f491a39f1a4ef831ad61ad59db1d1f57bdf4a[m
+Author: ArtyomZ <dcclxxviiz@gmail.com>
+Date:   Mon Sep 4 10:57:56 2023 -0400
+
+    Lesson2
+
+[33mcommit 37dc7825163ab7391d2af721e02e780825ab47a7[m
+Author: ArtyomZ <dcclxxviiz@gmail.com>
+Date:   Fri Sep 1 07:53:33 2023 -0400
+
+    lesson2
+
+[33mcommit 893bc82d01a623f2cf96cf502fa7d14a8f5d4047[m
+Author: ArtyomZ <dcclxxviiz@gmail.com>
+Date:   Thu Aug 31 06:53:19 2023 -0400
+
+    Lesson1Task4Change
+
+[33mcommit faade082eb3be24b20d47fbef5f1ecaee4c876bf[m
+Author: Oignon <dcclxxviiz@gmail.com>
+Date:   Wed Aug 30 16:49:19 2023 -0400
+
+    Lesson1Task4
+
+[33mcommit 1b7b13a960cfd56bc347d5b37a2f9baa7db48343[m
+Author: Oignon <dcclxxviiz@gmail.com>
+Date:   Wed Aug 30 15:51:02 2023 -0400
+
+    NewDevice
+
+[33mcommit 08c431752d01e650377515a87da262e4b5bfa00b[m
+Author: ArtyomZ <dcclxxviiz@gmail.com>
+Date:   Wed Aug 30 10:48:38 2023 -0400
+
+    Lesson1Task3
+
+[33mcommit 7fac492a475eabffd01aeee95dde8c46baedeeb9[m
+Author: ArtyomZ <dcclxxviiz@gmail.com>
+Date:   Wed Aug 30 09:08:38 2023 -0400
+
+    Lesson1Task2
+
+[33mcommit bc2e785619c11690f1a98e57ad11d5e57d0d297f[m
+Author: ArtyomZ <dcclxxviiz@gmail.com>
+Date:   Wed Aug 30 08:30:02 2023 -0400
+
+    Lesson1Task1
+
+[33mcommit 31f3a137f05ed557c2ffd753cbe2c255ce29334b[m
+Author: ArtyomZ <dcclxxviiz@gmail.com>
+Date:   Wed Aug 30 02:39:58 2023 -0400
+
+    Lesson 1
+
+[33mcommit 3859f711f1086224a77667e76b5ad20574e3426a[m
+Author: ArtyomZ <dcclxxviiz@gmail.com>
+Date:   Tue Aug 29 10:03:44 2023 -0400
+
+    added test.txt
+
+[33mcommit b5c9127035c27fe8fec5c98396a64d659d90cce3[m
+Author: ArtyomZ <dcclxxviiz@gmail.com>
+Date:   Tue Aug 29 09:37:25 2023 -0400
+
+    added gitignore
+
+[33mcommit d6911f05bfc2c06558454173fb5100069471f7a5[m
+Author: ArtyomZ <dcclxxviiz@gmail.com>
+Date:   Tue Aug 29 09:24:24 2023 -0400
+
+    first commit
